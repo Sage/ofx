@@ -32,7 +32,7 @@ module OFX
         if resource.respond_to?(:read)
           resource
         else
-          open(resource)
+          open(resource, encoding: 'UTF-8')
         end
       rescue
         StringIO.new(resource)

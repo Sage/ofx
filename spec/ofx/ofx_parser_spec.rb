@@ -28,7 +28,7 @@ describe OFX::Parser do
 
   it "should work with UTF8 and Latin1 encodings" do
     @ofx = OFX::Parser::Base.new("spec/fixtures/utf8.ofx")
-    @ofx.content.should == open("spec/fixtures/utf8.ofx").read
+    @ofx.content.should == open("spec/fixtures/utf8.ofx", encoding: 'UTF-8').read
   end
 
   it "should set body" do
